@@ -2,4 +2,39 @@ module cglm
 {
     umbrella header "cglm.h"
     link "cglm"
+    module apple
+    {
+        requires apple
+        header "cglm/applesimd.h"
+    }
+    module arm
+    {
+        requires arm
+        header "cglm/simd/arm.h"
+    }
+    module avx
+    {
+        requires avx
+        header "cglm/simd/avx/affine.h"
+        header "cglm/simd/avx/mat4.h"
+    }
+    module neon
+    {
+        requires neon
+        header "cglm/simd/neon/mat4.h"
+    }
+    module sse2
+    {
+        requires sse2
+        header "cglm/simd/sse2/affine.h"
+        header "cglm/simd/sse2/mat2.h"
+        header "cglm/simd/sse2/mat3.h"
+        header "cglm/simd/sse2/mat4.h"
+        header "cglm/simd/sse2/quat.h"
+    }
+    module x86
+    {
+        requires x86
+        header "cglm/simd/x86.h"
+    }
 }
